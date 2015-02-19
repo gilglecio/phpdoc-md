@@ -93,15 +93,17 @@ class Generator
         $index = $this->createIndex();
 
         $index = $twig->render(
-            file_get_contents($this->templateDir . '/index.twig'),
+            file_get_contents($this->templateDir . '/sidebar.twig'),
             array(
                 'index' => $index,
                 'classDefinitions' => $this->classDefinitions,
             )
         );
 
-        file_put_contents($this->outputDir . '/ApiIndex.md', $index);
+        file_put_contents($this->outputDir . '/_Sidebar.md', $index);
 
+        file_put_contents($this->outputDir . '/_Footer.md', 'Footer - Copyright');
+        file_put_contents($this->outputDir . '/Home.md', file_get_contents($this->templateDir . '/index.twig'));
     }
 
     /**
