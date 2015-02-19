@@ -40,8 +40,8 @@ Constants
 
 ### {{ constant.name }}
 
-```
-{{ constant.signature|raw }}
+```php
+    {{ constant.signature|raw }}
 ```
 
 {{ property.description|raw }}
@@ -60,8 +60,8 @@ Properties
 
 ### {{ property.name }}
 
-```
-{{ property.signature|raw }}
+```php
+    {{ property.signature|raw }}
 ```
 
 {{ property.description|raw }}
@@ -85,8 +85,8 @@ Methods
 
 ### {{ method.name }}
 
-```
-{{ method.signature|raw }}
+```php
+    {{ method.signature|raw }}
 ```
 
 {{ method.description|raw }}
@@ -101,9 +101,9 @@ Methods
 {% if method.definedBy != className %}* This method is defined by {{ method.definedBy|classLink }}
 {% endif %}
 
+
 {% if method.arguments %}
 #### Arguments
-
 {% for argument in method.arguments %}
 * {{ argument.name }} **{% if argument.type %}{{ argument.type|classLink }}{% else %}mixed{% endif %}**{% if argument.description %} - {{ argument.description }}{% endif %}
 
